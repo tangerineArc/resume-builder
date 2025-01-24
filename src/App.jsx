@@ -1,11 +1,13 @@
-import "./App.css"
+import "./App.css";
 
-function App() {
+import Editor from "./components/Editor.jsx";
+import Preview from "./components/Preview.jsx";
+
+export default function App() {
   return (
     <>
-      <h1>Goddess of Discord</h1>
+      <Editor />
+      <Preview />
     </>
-  )
+  );
 }
-
-export default App

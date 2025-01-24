@@ -1,0 +1,6 @@
+#preview {
+  background-color: lightpink;
+
+  flex-basis: 60%;
+  /* width: max(300px, 60%); */
+}
