@@ -1,0 +1,41 @@
+.skill-item {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 0.1fr;
+  gap: 0.8rem;
+  align-items: center;
+
+  & > input {
+    border: none;
+    outline: none;
+    appearance: none;
+
+    background-color: #e2eafc77;
+    padding: 0.8rem;
+    border-radius: 5px;
+
+    font-size: 0.85rem;
+    font-family: inherit;
+  }
+
+  & > input:hover {
+    outline: 1px solid #0466c8;
+  }
+
+  & > input:focus {
+    outline: 2px solid #0466c8;
+  }
+
+  & > .remove-icon {
+    flex-shrink: 0;
+
+    width: 1.4rem;
+    height: 1.4rem;
+
+    cursor: pointer;
+  }
+
+  & > .remove-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+}

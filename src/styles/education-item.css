@@ -1,0 +1,34 @@
+.education-item {
+  border: 2px solid #abc4ff;
+  border-radius: 10px;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > div {
+    & > p:first-of-type {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    & > p:last-of-type {
+      font-size: 0.9rem;
+    }
+  }
+
+  & > .edit-icon {
+    flex-shrink: 0;
+
+    width: 1.2rem;
+    height: 1.2rem;
+
+    cursor: pointer;
+  }
+
+  & > .edit-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+  }
+}

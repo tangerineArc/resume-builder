@@ -1,6 +1,12 @@
 import "../styles/editor.css";
 
-import { CircleMinus, CirclePlus, Pencil } from 'lucide-react';
+import AddButton from "../ui/AddButton.jsx";
+
+import EducationItem from "./EducationItem.jsx";
+import EmploymentHistoryItem from "./EmploymentHistoryItem.jsx";
+import LanguagesEditorSection from "./LanguagesEditorSection.jsx";
+import PersonalDetailsForm from "./PersonalDetailsForm.jsx";
+import SkillItem from "./SkillItem.jsx";
 
 export default function Editor() {
   return (
@@ -8,137 +14,57 @@ export default function Editor() {
       <h1>Resumé Builder</h1>
 
       <section>
+        <hr />
         <h2>Personal Details</h2>
-        <form>
-          <div>
-            <label htmlFor="first-name">First Name</label>
-            <input type="text" name="first-name" id="first-name" />
-          </div>
-          <div>
-            <label htmlFor="last-name">Last Name</label>
-            <input type="text" name="last-name" id="last-name" />
-          </div>
-          <div>
-            <label htmlFor="mail-id">Email</label>
-            <input type="email" name="mail-id" id="mail-id" />
-          </div>
-          <div>
-            <label htmlFor="phone-number">Phone</label>
-            <input type="tel" name="phone-number" id="phone-number" />
-          </div>
-          <div>
-            <label htmlFor="address">Address</label>
-            <input type="text" name="address" id="address" />
-          </div>
-          <div>
-            <label htmlFor="job-role">Job Role</label>
-            <input type="text" name="job-role" id="job-role" />
-          </div>
-          <div>
-            <label htmlFor="linkedin-handle">LinkedIn</label>
-            <input type="url" name="linkedin-handle" id="linkedin-handle" />
-          </div>
-          <div>
-            <label htmlFor="portfolio-website">Portfolio</label>
-            <input type="url" name="portfolio-website" id="portfolio-website" />
-          </div>
-          <div>
-            <label htmlFor="about">About</label>
-            <textarea name="about" id="about"></textarea>
-          </div>
-          <div>
-            <label htmlFor="profile-picture">Profile Picture</label>
-            <input type="file" name="profile-picture" id="profile-picture" />
-          </div>
-        </form>
+        <hr />
+        <PersonalDetailsForm />
       </section>
 
       <section>
-        <h2>Employment History</h2>
         <div>
-          <div>
-            <p>Web Developer at Acme Inc.</p>
-            <p><span>Oct 2021</span> - <span>Present</span></p>
-          </div>
-          <Pencil />
+          <hr />
+          <h2>Employment History</h2>
+          <hr />
         </div>
-        <div>
-          <div>
-            <p>Junior Web Developer at Startup Inc.</p>
-            <p><span>Oct 2021</span> - <span>Present</span></p>
-          </div>
-          <Pencil />
-        </div>
-        <button>
-          <CirclePlus />
-          Add Employment
-        </button>
+
+        <EmploymentHistoryItem role={"Web Developer at Acme Inc."} startDate={"Oct 2021"} endDate={"Present"} />
+        <EmploymentHistoryItem role={"Junior Web Developer at Startup Inc."} startDate={"Oct 2021"} endDate={"Present"} />
+
+        <AddButton label={"Add Employment"} />
       </section>
 
       <section>
+        <hr />
         <h2>Skills</h2>
+        <hr />
         <div>
           <div>
-            <p>Categories</p>
-            <p>Skills</p>
+            <div>Categories</div>
+            <div>Skills</div>
           </div>
-          <div>
-            <input type="text" defaultValue={"Programming Languages"} />
-            <input type="text" defaultValue={"HTML, CSS, JavaScript"} />
-            <CircleMinus style={{flexShrink: 0}} />
-          </div>
-          <div>
-            <input type="text" defaultValue={"Cloud Services"} />
-            <input type="text" defaultValue={"AWS, GCP, MS Azure"} />
-            <CircleMinus style={{flexShrink: 0}} />
-          </div>
-          <div>
-            <input type="text" defaultValue={"Web Technologies"} />
-            <input type="text" defaultValue={"React, Angular, Vue"} />
-            <CircleMinus style={{flexShrink: 0}} />
-          </div>
-          <div>
-            <input type="text" defaultValue={"Databases"} />
-            <input type="text" defaultValue={"MySQL, SQLite, PostgreSQL, MongoDB"} />
-            <CircleMinus style={{flexShrink: 0}} />
-          </div>
+
+          <SkillItem category={"Programming Languages"} skills={"HTML, CSS, JavaScript"} />
+          <SkillItem category={"Cloud Services"} skills={"AWS, GCP, MS Azure"} />
+          <SkillItem category={"Web Technologies"} skills={"React, Angular, Vue"} />
+          <SkillItem category={"Databases"} skills={"MySQL, SQLite, PostgreSQL, MongoDB"} />
         </div>
-        <button>
-          <CirclePlus />
-          Add Skill
-        </button>
+
+        <AddButton label={"Add Skill"} />
       </section>
 
       <section>
-        <h2>Education</h2>
         <div>
-          <div>
-            <p>B.Tech Computer Science at IIT Patna</p>
-            <p><span>Oct 2021</span> - <span>Present</span></p>
-          </div>
-          <Pencil />
+          <hr />
+          <h2>Education</h2>
+          <hr />
         </div>
-        <button>
-          <CirclePlus />
-          Add Education
-        </button>
+
+        <EducationItem degree={"B.Tech Computer Science"} school={"IIT Patna"} startDate={"Oct 2021"} endDate={"Present"} />
+        
+        <AddButton label={"Add Education"} />
       </section>
 
-      <section>
-        <h2>Languages</h2>
-        <div>
-          <input type="text" placeholder="e.g. Javanese"/>
-          <button>
-            <CirclePlus />
-            Add
-          </button>
-        </div>
-        <div>
-          <span>Portuguese</span>
-          <span>Spanish</span>
-          <span>Italian</span>
-        </div>
-      </section>
+      <LanguagesEditorSection />
     </div>
   );
 }

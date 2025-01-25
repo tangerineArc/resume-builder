@@ -1,0 +1,47 @@
+#languages-editor-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  & > div:first-of-type {
+    width: 100%;
+  }
+
+  & > div:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & > input {
+      outline: none;
+      border: none;
+      appearance: none;
+
+      background-color: #e2eafc77;
+      height: 100%;
+      padding: 0.8rem;
+      border-radius: 5px;
+
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+  }
+
+  & > div:last-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: 0.9rem;
+
+    & > span {
+      background-color: #ccdbfd;
+      padding: 0.5rem;
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+  }
+}
