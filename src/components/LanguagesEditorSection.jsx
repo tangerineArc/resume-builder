@@ -2,6 +2,8 @@ import "../styles/languages-editor-section.css";
 
 import AddButton from "../ui/AddButton";
 
+import LanguageItem from "./LanguageItem.jsx";
+
 export default function LanguagesEditorSection() {
   return (
     <section id="languages-editor-section">
@@ -17,9 +19,9 @@ export default function LanguagesEditorSection() {
       </div>
 
       <div>
-        <span>Portuguese</span>
-        <span>Spanish</span>
-        <span>Italian</span>
+        <LanguageItem language={"Portuguese"} />
+        <LanguageItem language={"Spanish"} />
+        <LanguageItem language={"Italian"} />
       </div>
     </section>
   );

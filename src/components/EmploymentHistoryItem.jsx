@@ -1,6 +1,6 @@
 import "../styles/employment-history-item.css";
 
-import { Pencil } from "lucide-react";
+import { Pencil, Trash2 } from "lucide-react";
 
 export default function EmploymentHistoryItem({ role, startDate, endDate }) {
   return (
@@ -9,7 +9,10 @@ export default function EmploymentHistoryItem({ role, startDate, endDate }) {
         <p>{role}</p>
         <p>{startDate} - {endDate}</p>
       </div>
-      <Pencil color="#0582ca" className="edit-icon" />
+      <div>
+        <Pencil color="#0582ca" className="icon" />
+        <Trash2 color="#5c677d" className="icon" />
+      </div>
     </div>
   );
 }

@@ -2,7 +2,9 @@ import "../styles/editor.css";
 
 import AddButton from "../ui/AddButton.jsx";
 
+import EducationEditorForm from "./EducationEditorForm.jsx";
 import EducationItem from "./EducationItem.jsx";
+import EmploymentHistoryEditorForm from "./EmploymentHistoryEditorForm.jsx";
 import EmploymentHistoryItem from "./EmploymentHistoryItem.jsx";
 import LanguagesEditorSection from "./LanguagesEditorSection.jsx";
 import PersonalDetailsForm from "./PersonalDetailsForm.jsx";
@@ -29,6 +31,8 @@ export default function Editor() {
 
         <EmploymentHistoryItem role={"Web Developer at Acme Inc."} startDate={"Oct 2021"} endDate={"Present"} />
         <EmploymentHistoryItem role={"Junior Web Developer at Startup Inc."} startDate={"Oct 2021"} endDate={"Present"} />
+
+        <EmploymentHistoryEditorForm />
 
         <AddButton label={"Add Employment"} />
       </section>
@@ -60,6 +64,8 @@ export default function Editor() {
         </div>
 
         <EducationItem degree={"B.Tech Computer Science"} school={"IIT Patna"} startDate={"Oct 2021"} endDate={"Present"} />
+
+        <EducationEditorForm />
         
         <AddButton label={"Add Education"} />
       </section>

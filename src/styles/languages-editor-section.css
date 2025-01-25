@@ -35,13 +35,5 @@
     gap: 0.5rem;
 
     font-size: 0.9rem;
-
-    & > span {
-      background-color: #ccdbfd;
-      padding: 0.5rem;
-      border-radius: 5px;
-
-      cursor: pointer;
-    }
   }
 }

@@ -1,6 +1,6 @@
 import "../styles/education-item.css";
 
-import { Pencil } from "lucide-react"
+import { Pencil, Trash2 } from "lucide-react"
 
 export default function EducationItem({degree, school, startDate, endDate}) {
   return (
@@ -9,7 +9,10 @@ export default function EducationItem({degree, school, startDate, endDate}) {
         <p>{degree} at {school}</p>
         <p>{startDate} - {endDate}</p>
       </div>
-      <Pencil className="edit-icon" color="#0582ca" />
+      <div>
+        <Pencil className="icon" color="#0582ca" />
+        <Trash2 className="icon" color="#5c677d" />
+      </div>
     </div>
   );
 }
