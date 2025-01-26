@@ -1,69 +1,74 @@
 const defaultEmployments = [
   {
     id: crypto.randomUUID(),
-    role: "Web Developer",
-    employer: "Acme Inc.",
-    startDate: "Oct 2021",
+    role: "Leader",
+    employer: "House of the Dead",
+    startDate: "Oct 20XX",
     endDate: "Present",
-    city: "San Diego, CA",
+    city: "Underground",
     description:
-      "Designed and developed responsive websites and web applications using HTML, CSS, JavaScript, and React.js. Implemented backend functionality using Python and Django. Collaborated with designers and project managers to ensure on-time delivery of projects.",
+      "Engineered the downfall of influential groups through meticulous manipulation of events and human behavior.",
   },
   {
     id: crypto.randomUUID(),
-    role: "Junior Web Developer",
-    employer: "Startup Inc.",
-    startDate: "Nov 2024",
-    endDate: "Dec 2025",
-    city: "San Francisco, CA",
+    role: "Founder",
+    employer: "Decay of the Angel",
+    startDate: "Nov 20XX",
+    endDate: "Dec 20XX",
+    city: "Underground",
     description:
-      "Developed and maintained web applications using HTML, CSS, and JavaScript. Troubleshooted and resolved bugs to ensure smooth website operation.",
+      "Spearheaded an international operation to dismantle corrupt organizations and destabilize global powers to achieve ideological goals.",
   },
 ];
 
 const defaultSkills = [
   {
     id: crypto.randomUUID(),
-    category: "Programming Languages",
-    skills: "HTML, CSS, JavaScript",
+    category: "Ability",
+    skills: "Crime and Punishment",
   },
   {
     id: crypto.randomUUID(),
-    category: "Cloud Services",
-    skills: "AWS, GCP, MS Azure",
+    category: "Strategic Planning",
+    skills: "Resource optimization, Risk assessment",
   },
   {
     id: crypto.randomUUID(),
-    category: "Databases",
-    skills: "MySQL, SQLite, PostgreSQL, MongoDB",
+    category: "Psychological Expertise",
+    skills: "Behavioral manipulation",
   },
+  {
+    id: crypto.randomUUID(),
+    category: "Leadership",
+    skills: "Charisma, Precision execution"
+  }
 ];
 
 const defaultEntries = [
   {
     id: crypto.randomUUID(),
-    school: "IIT Patna",
-    degree: "B.Tech Computer Science",
-    startDate: "Aug 2023",
-    endDate: "Present",
-    city: "Patna, Bihar",
+    school: "School of Shadows",
+    degree: "Philosophy of Sin",
+    startDate: "Aug 20XX",
+    endDate: "Dec 20XX",
+    city: "Underground",
     description:
-      "Successfully completed a capstone project involving the design and development of a complex web application, demonstrating the ability to apply theoretical knowledge to real-world scenarios.",
+      "Mastered the art of strategy, philosophy, and human psychology through relentless study and real-world application. My education transcends formal institutions, shaped by literature, existential thought, and the complexities of human nature.",
   },
 ];
 
 const defaultLanguages = [
   {
     id: crypto.randomUUID(),
-    language: "Portuguese",
+    language: "English",
   },
   {
     id: crypto.randomUUID(),
-    language: "Spanish",
+    language: "Japanese",
   },
   {
     id: crypto.randomUUID(),
-    language: "Italian",
+    language: "Russian",
   },
 ];
 

@@ -11,16 +11,16 @@ import Editor from "./components/Editor.jsx";
 import Preview from "./components/Preview.jsx";
 
 export default function App() {
-  const [firstName, setFirstName] = useState("Jonathan");
-  const [lastName, setLastName] = useState("Doe");
-  const [jobRole, setJobRole] = useState("Web Developer");
-  const [email, setEmail] = useState("jonathan.doe@web.com");
-  const [phone, setPhone] = useState("(555) 555-555");
-  const [address, setAddress] = useState("San Francisco, California");
-  const [linkedin, setLinkedin] = useState("https://linkedin.com/username");
-  const [portfolio, setPortfolio] = useState("https://github.com/username");
+  const [firstName, setFirstName] = useState("Fyodor");
+  const [lastName, setLastName] = useState("Dostoevsky");
+  const [jobRole, setJobRole] = useState("The Conjurer");
+  const [email, setEmail] = useState("[email protected]");
+  const [phone, setPhone] = useState("+81-000-SINLESS");
+  const [address, setAddress] = useState("Yokohama, Japan");
+  const [linkedin, setLinkedin] = useState("https://linkedin.com/demon");
+  const [portfolio, setPortfolio] = useState("https://github.com/tangerineArc");
   const [about, setAbout] = useState(
-    "Highly motivated and results-oriented Web Developer with 4 years of experience in building user-friendly and responsive web applications. Passionate about innovative and performant web experiences."
+    "An enigmatic strategist with expertise in orchestrating complex operations and dismantling organizations through meticulous planning and psychological manipulation. Adept at achieving ambitious goals with precision and minimal resources."
   );
   const [profilePicture, setProfilePicture] = useState("/fyodor.jpg");
 
