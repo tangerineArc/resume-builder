@@ -11,8 +11,47 @@
 
 #root {
   height: 100vh;
+  position: relative;
 
   display: flex;
 
   font-family: "Inter", serif;
+
+  & > .print-icon {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+
+    cursor: pointer;
+  }
+
+  & > .print-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+  }
+}
+
+@page {
+  margin: 0in;
+}
+
+@media print {
+  #editor {
+    display: none !important;
+  }
+
+  .print-icon {
+    display: none;
+  }
+
+  #preview {
+    flex-basis: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+
+    & > div {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { Printer } from 'lucide-react';
 import { useState } from "react";
 
 import {
@@ -95,6 +96,8 @@ export default function App() {
         data={data}
       />
       <Preview data={data} />
+
+      <Printer className="print-icon" size={32} color="#0466c8" onClick={print} />
     </>
   );
 }
