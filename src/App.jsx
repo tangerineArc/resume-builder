@@ -4,6 +4,7 @@ import {
   defaultEmployments,
   defaultEntries,
   defaultSkills,
+  defaultLanguages,
 } from "./data/defaults.js";
 
 import Editor from "./components/Editor.jsx";
@@ -25,6 +26,7 @@ export default function App() {
   const [employments, setEmployments] = useState(defaultEmployments);
   const [skills, setSkills] = useState(defaultSkills);
   const [entries, setEntries] = useState(defaultEntries);
+  const [languages, setLanguages] = useState(defaultLanguages);
 
   const modifiers = {
     handleFirstNameChange: (name) => {
@@ -69,12 +71,19 @@ export default function App() {
     employments,
     skills,
     entries,
+    languages,
   };
 
   return (
     <>
       <Editor
-        modifiers={{ ...modifiers, setEmployments, setSkills, setEntries }}
+        modifiers={{
+          ...modifiers,
+          setEmployments,
+          setSkills,
+          setEntries,
+          setLanguages,
+        }}
         data={data}
       />
       <Preview data={data} />

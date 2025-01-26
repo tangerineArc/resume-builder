@@ -52,4 +52,19 @@ const defaultEntries = [
   },
 ];
 
-export { defaultEmployments, defaultSkills, defaultEntries };
+const defaultLanguages = [
+  {
+    id: crypto.randomUUID(),
+    language: "Portuguese",
+  },
+  {
+    id: crypto.randomUUID(),
+    language: "Spanish",
+  },
+  {
+    id: crypto.randomUUID(),
+    language: "Italian",
+  },
+];
+
+export { defaultEmployments, defaultSkills, defaultEntries, defaultLanguages };

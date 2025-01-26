@@ -6,29 +6,13 @@ import AddButton from "../ui/AddButton";
 
 import LanguageItem from "./LanguageItem.jsx";
 
-const defaultLanguages = [
-  {
-    id: crypto.randomUUID(),
-    language: "Portuguese",
-  },
-  {
-    id: crypto.randomUUID(),
-    language: "Spanish",
-  },
-  {
-    id: crypto.randomUUID(),
-    language: "Italian",
-  },
-];
-
-export default function LanguagesEditorSection() {
+export default function LanguagesEditorSection({ modifiers, data }) {
   const [currentLanguage, setCurrentLanguage] = useState("");
-  const [languages, setLanguages] = useState(defaultLanguages);
 
   const handleAddLanguage = () => {
     if (!currentLanguage.trim()) return;
 
-    setLanguages((prevLanguages) => {
+    modifiers.setLanguages((prevLanguages) => {
       const newLanguages = structuredClone(prevLanguages);
       newLanguages.push({ id: crypto.randomUUID(), language: currentLanguage });
       return newLanguages;
@@ -38,7 +22,7 @@ export default function LanguagesEditorSection() {
   };
 
   const handleDeleteLanguage = (targetId) => {
-    setLanguages((prevLanguages) =>
+    modifiers.setLanguages((prevLanguages) =>
       prevLanguages.filter((language) => language.id !== targetId)
     );
   };
@@ -66,7 +50,7 @@ export default function LanguagesEditorSection() {
       </div>
 
       <div>
-        {languages.map((language) => {
+        {data.languages.map((language) => {
           return (
             <LanguageItem
               key={language.id}

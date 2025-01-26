@@ -38,9 +38,11 @@ export default function Preview({ data }) {
           <div>
             <p>Languages</p>
             <div>
-              <p>Portuguese</p>
-              <p>Spanish</p>
-              <p>Italian</p>
+              {data.languages.map(language => {
+                return (
+                  <p key={language.id}>{language.language}</p>    
+                );
+              })}
             </div>
           </div>
         </aside>
