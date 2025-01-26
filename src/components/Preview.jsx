@@ -75,22 +75,14 @@ export default function Preview({ data }) {
 
           <div>
             <p>Skills</p>
-            <div>
-              <p>Programming Languages</p>
-              <p>HTML, CSS, JavaScript</p>
-            </div>
-            <div>
-              <p>Cloud Services</p>
-              <p>AWS, GCP, MS Azure</p>
-            </div>
-            <div>
-              <p>Web Technologies</p>
-              <p>React, Angular, Vue</p>
-            </div>
-            <div>
-              <p>Databases</p>
-              <p>MySQL, PostgreSQL, MongoDB, SQLite3</p>
-            </div>
+            {data.skills.map((skill) => {
+              return (
+                <div key={skill.id}>
+                  <p>{skill.category}</p>
+                  <p>{skill.skills}</p>
+                </div>
+              );
+            })}
           </div>
 
           <div>

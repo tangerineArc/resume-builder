@@ -1,4 +1,4 @@
-export const defaultEmployments = [
+const defaultEmployments = [
   {
     id: crypto.randomUUID(),
     role: "Web Developer",
@@ -20,3 +20,23 @@ export const defaultEmployments = [
       "Developed and maintained web applications using HTML, CSS, and JavaScript. Troubleshooted and resolved bugs to ensure smooth website operation.",
   },
 ];
+
+const defaultSkills = [
+  {
+    id: crypto.randomUUID(),
+    category: "Programming Languages",
+    skills: "HTML, CSS, JavaScript",
+  },
+  {
+    id: crypto.randomUUID(),
+    category: "Cloud Services",
+    skills: "AWS, GCP, MS Azure",
+  },
+  {
+    id: crypto.randomUUID(),
+    category: "Databases",
+    skills: "MySQL, SQLite, PostgreSQL, MongoDB",
+  },
+];
+
+export { defaultEmployments, defaultSkills };

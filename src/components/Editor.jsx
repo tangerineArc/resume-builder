@@ -13,7 +13,7 @@ export default function Editor({ modifiers, data }) {
 
       <PersonalDetailsSection modifiers={modifiers} data={data} />
       <EmploymentHistorySection modifiers={modifiers} data={data} />
-      <SkillsSection />
+      <SkillsSection modifiers={modifiers} data={data} />
       <EducationSection />
       <LanguagesEditorSection />
     </div>

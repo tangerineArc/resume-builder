@@ -1,34 +1,12 @@
 import "../styles/skills-section.css";
 
-import { useState } from "react";
-
 import AddButton from "../ui/AddButton.jsx";
 
 import SkillItem from "./SkillItem.jsx";
 
-const defaultSkills = [
-  {
-    id: crypto.randomUUID(),
-    category: "Programming Languages",
-    skills: "HTML, CSS, JavaScript",
-  },
-  {
-    id: crypto.randomUUID(),
-    category: "Cloud Services",
-    skills: "AWS, GCP, MS Azure",
-  },
-  {
-    id: crypto.randomUUID(),
-    category: "Databases",
-    skills: "MySQL, SQLite, PostgreSQL, MongoDB",
-  },
-];
-
-export default function SkillsSection() {
-  const [skills, setSkills] = useState(defaultSkills);
-
+export default function SkillsSection({ modifiers, data }) {
   const handleAddSkill = () => {
-    if (!skills.at(-1).category) return;
+    if (!data.skills.at(-1).category) return;
 
     const skill = {
       id: crypto.randomUUID(),
@@ -36,7 +14,7 @@ export default function SkillsSection() {
       skills: "",
     };
 
-    setSkills((prevSkills) => {
+    modifiers.setSkills((prevSkills) => {
       const newSkills = structuredClone(prevSkills);
       newSkills.push(skill);
       return newSkills;
@@ -44,7 +22,7 @@ export default function SkillsSection() {
   };
 
   const handleDeleteSkill = (targetId) => {
-    setSkills((prevSkills) =>
+    modifiers.setSkills((prevSkills) =>
       prevSkills.filter((skill) => skill.id !== targetId)
     );
   };
@@ -60,12 +38,13 @@ export default function SkillsSection() {
           <input defaultValue={"Skills"} disabled />
         </div>
 
-        {skills.map((skill) => {
+        {data.skills.map((skill) => {
           return (
             <SkillItem
               key={skill.id}
               item={skill}
               deleteEventHandler={() => handleDeleteSkill(skill.id)}
+              modifiers={modifiers}
             />
           );
         })}
