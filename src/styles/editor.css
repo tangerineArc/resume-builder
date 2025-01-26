@@ -18,20 +18,4 @@
     color: #0466c8;
     font-size: 3rem;
   }
-
-  & > section {
-    margin-bottom: 1rem;
-
-    & > h2 {
-      font-family: "DM Serif Text", serif;
-      margin-left: 1rem;
-      margin-bottom: 0.6rem;
-      margin-top: 0.5rem;
-      color: #002855;
-    }
-
-    & > hr {
-      border-color: #0466c844;
-    }
-  }
 }
