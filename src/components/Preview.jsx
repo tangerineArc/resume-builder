@@ -2,7 +2,7 @@ import "../styles/preview.css";
 
 import { Dot } from "lucide-react";
 
-export default function Preview() {
+export default function Preview({ data }) {
   return (
     <div id="preview">
       <div>
@@ -15,23 +15,23 @@ export default function Preview() {
             <p>Contact</p>
             <div>
               <p>Address</p>
-              <p>San Francisco, California</p>
+              <p>{data.address}</p>
             </div>
             <div>
               <p>Phone</p>
-              <p>(555) 555-555</p>
+              <p>{data.phone}</p>
             </div>
             <div>
               <p>Email</p>
-              <p>jonathan.doe@web.com</p>
+              <p>{data.email}</p>
             </div>
             <div>
               <p>LinkedIn</p>
-              <p>https://linkedin.com/username</p>
+              <p>{data.linkedin}</p>
             </div>
             <div>
               <p>Portfolio</p>
-              <p>https://github.com/username</p>
+              <p>{data.portfolio}</p>
             </div>
           </div>
 
@@ -47,15 +47,10 @@ export default function Preview() {
 
         <main>
           <p>
-            <span>Jonathan</span> <span>Doe</span>
+            <span>{data.firstName}</span> <span>{data.lastName}</span>
           </p>
-          <p>Web Developer</p>
-          <p>
-            Highly motivated and results-oriented Web Developer with 4 years of
-            experience in building user-friendly and responsive web
-            applications. Passionate about innovative and performant web
-            experiences.
-          </p>
+          <p>{data.jobRole}</p>
+          <p>{data.about}</p>
 
           <div>
             <p>Work Experience</p>

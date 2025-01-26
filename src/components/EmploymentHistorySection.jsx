@@ -78,7 +78,7 @@ export default function EmploymentHistorySection() {
     <section id="employment-history-section">
       <div>
         <hr />
-        <h2>Employment History</h2>
+        <h2>Work Experience</h2>
         <hr />
       </div>
 

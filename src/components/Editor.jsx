@@ -6,12 +6,12 @@ import LanguagesEditorSection from "./LanguagesEditorSection.jsx";
 import PersonalDetailsSection from "./PersonalDetailsSection.jsx";
 import SkillsSection from "./SkillsSection.jsx";
 
-export default function Editor() {
+export default function Editor({ modifiers, data }) {
   return (
     <div id="editor">
       <h1>Resumé Builder</h1>
 
-      <PersonalDetailsSection />
+      <PersonalDetailsSection modifiers={modifiers} data={data} />
       <EmploymentHistorySection />
       <SkillsSection />
       <EducationSection />

@@ -53,6 +53,8 @@
       resize: vertical;
       padding: 0.8rem;
 
+      line-height: 1.5;
+
       scrollbar-width: thin;
       scrollbar-color: #abc4ff #e2eafc77;
     }
