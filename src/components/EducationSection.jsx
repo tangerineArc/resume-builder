@@ -7,22 +7,8 @@ import AddButton from "../ui/AddButton.jsx";
 import EducationEditorForm from "./EducationEditorForm.jsx";
 import EducationItem from "./EducationItem.jsx";
 
-const defaultEntries = [
-  {
-    id: crypto.randomUUID(),
-    school: "IIT Patna",
-    degree: "B.Tech Computer Science",
-    startDate: "Aug 2023",
-    endDate: "Present",
-    city: "Patna, Bihar",
-    description:
-      "Successfully completed a capstone project involving the design and development of a complex web application, demonstrating the ability to apply theoretical knowledge to real-world scenarios.",
-  },
-];
-
-export default function EducationSection() {
+export default function EducationSection({ modifiers, data }) {
   const [isAddingEntry, setIsAddingEntry] = useState(false);
-  const [entries, setEntries] = useState(defaultEntries);
 
   const handleAddEntry = () => {
     setIsAddingEntry(true);
@@ -46,7 +32,7 @@ export default function EducationSection() {
       description: data.description,
     };
 
-    setEntries((prevEntries) => {
+    modifiers.setEntries((prevEntries) => {
       const newEntries = structuredClone(prevEntries);
       newEntries.push(entry);
       return newEntries;
@@ -56,7 +42,7 @@ export default function EducationSection() {
   };
 
   const handleDeleteEntry = (targetId) => {
-    setEntries((prevEntries) =>
+    modifiers.setEntries((prevEntries) =>
       prevEntries.filter((entry) => entry.id !== targetId)
     );
   };
@@ -69,12 +55,13 @@ export default function EducationSection() {
         <hr />
       </div>
 
-      {entries.map((entry) => {
+      {data.entries.map((entry) => {
         return (
           <EducationItem
             key={entry.id}
             item={entry}
             deleteEventHandler={() => handleDeleteEntry(entry.id)}
+            modifiers={modifiers}
           />
         );
       })}

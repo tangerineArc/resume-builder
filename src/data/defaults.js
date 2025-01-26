@@ -39,4 +39,17 @@ const defaultSkills = [
   },
 ];
 
-export { defaultEmployments, defaultSkills };
+const defaultEntries = [
+  {
+    id: crypto.randomUUID(),
+    school: "IIT Patna",
+    degree: "B.Tech Computer Science",
+    startDate: "Aug 2023",
+    endDate: "Present",
+    city: "Patna, Bihar",
+    description:
+      "Successfully completed a capstone project involving the design and development of a complex web application, demonstrating the ability to apply theoretical knowledge to real-world scenarios.",
+  },
+];
+
+export { defaultEmployments, defaultSkills, defaultEntries };

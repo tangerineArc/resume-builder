@@ -20,7 +20,6 @@ export default function EmploymentHistoryItem({ item, deleteEventHandler, modifi
     event.preventDefault();
 
     const data = Object.fromEntries(new FormData(event.target));
-
     modifiers.setEmployments(prevEmployments => {
       const newEmployments = structuredClone(prevEmployments);
       for (let employment of newEmployments) {
@@ -29,7 +28,7 @@ export default function EmploymentHistoryItem({ item, deleteEventHandler, modifi
           employment.employer = data.employer;
           employment.startDate = data["start-date"];
           employment.endDate = data["end-date"];
-          employment.city = data["city"];
+          employment.city = data.city;
           employment.description = data.description;
           break;
         }

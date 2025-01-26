@@ -14,7 +14,7 @@ export default function Editor({ modifiers, data }) {
       <PersonalDetailsSection modifiers={modifiers} data={data} />
       <EmploymentHistorySection modifiers={modifiers} data={data} />
       <SkillsSection modifiers={modifiers} data={data} />
-      <EducationSection />
+      <EducationSection modifiers={modifiers} data={data} />
       <LanguagesEditorSection />
     </div>
   );

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import EducationEditorForm from "./EducationEditorForm.jsx";
 
-export default function EducationItem({ item, deleteEventHandler }) {
+export default function EducationItem({ item, deleteEventHandler, modifiers }) {
   const [isEditingEducation, setIsEditingEducation] = useState(false);
 
   const handleEditEducation = () => {
@@ -20,12 +20,21 @@ export default function EducationItem({ item, deleteEventHandler }) {
     event.preventDefault();
 
     const data = Object.fromEntries(new FormData(event.target));
-    item.school = data.school;
-    item.degree = data.degree;
-    item.startDate = data["start-date"];
-    item.endDate = data["end-date"];
-    item.city = data.city;
-    item.description = data.description;
+    modifiers.setEntries(prevEntries => {
+      const newEntries = structuredClone(prevEntries);
+      for (let entry of newEntries) {
+        if (item.id === entry.id) {
+          entry.school = data.school;
+          entry.degree = data.degree;
+          entry.startDate = data["start-date"];
+          entry.endDate = data["end-date"];
+          entry.city = data.city;
+          entry.description = data.description;
+          break;
+        }
+      }
+      return newEntries;
+    });
 
     handleCancelEdit();
   };

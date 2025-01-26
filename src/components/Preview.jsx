@@ -87,19 +87,23 @@ export default function Preview({ data }) {
 
           <div>
             <p>Education</p>
-            <div>
-              <Dot className="decorator-icon" color="#d7e3fc" />
-              <div>
-                <p>B.Tech Computer Science</p>
-                <p>Aug 2023 - Present</p>
-              </div>
-              <p>Berkeley, California ~ University of California</p>
-              <p>
-                Successfully completed a capstone project involving the design
-                and development of a complex web application, demonstrating the
-                ability to apply theoretical knowledge to real-world scenarios.
-              </p>
-            </div>
+            {data.entries.map((entry) => {
+              return (
+                <div key={entry.id}>
+                  <Dot className="decorator-icon" color="#d7e3fc" />
+                  <div>
+                    <p>{entry.degree}</p>
+                    <p>
+                      {entry.startDate} - {entry.endDate}
+                    </p>
+                  </div>
+                  <p>
+                    {entry.city} ~ {entry.school}
+                  </p>
+                  <p>{entry.description}</p>
+                </div>
+              );
+            })}
           </div>
         </main>
       </div>
