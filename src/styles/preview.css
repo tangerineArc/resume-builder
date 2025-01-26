@@ -232,3 +232,27 @@
     }
   }
 }
+
+@media (max-width: 1400px) {
+  #preview > div {
+    transform: translateY(-10%) scale(0.8);
+  }
+}
+
+@media (max-width: 1200px) {
+  #preview > div {
+    transform: translateY(-15%) scale(0.7);
+  }
+}
+
+@media (max-width: 1000px) {
+  #preview > div {
+    transform: translateY(-20%) scale(0.5);
+  }
+}
+
+@media (max-width: 800px) {
+  #preview > div {
+    transform: translateY(-20%) scale(0.5);
+  }
+}
