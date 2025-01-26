@@ -22,6 +22,7 @@ export default function App() {
   const [about, setAbout] = useState(
     "Highly motivated and results-oriented Web Developer with 4 years of experience in building user-friendly and responsive web applications. Passionate about innovative and performant web experiences."
   );
+  const [profilePicture, setProfilePicture] = useState("/fyodor.jpg");
 
   const [employments, setEmployments] = useState(defaultEmployments);
   const [skills, setSkills] = useState(defaultSkills);
@@ -56,6 +57,12 @@ export default function App() {
     handleAboutChange: (desc) => {
       setAbout(desc.trim());
     },
+    handleProfilePictureChange: (image) => {
+      if (!image || !image.type.startsWith("image/")) return;
+
+      const url = URL.createObjectURL(image);
+      setProfilePicture(url);
+    },
   };
 
   const data = {
@@ -68,6 +75,7 @@ export default function App() {
     portfolio,
     linkedin,
     about,
+    profilePicture,
     employments,
     skills,
     entries,

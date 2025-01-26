@@ -8,7 +8,11 @@ export default function Preview({ data }) {
       <div>
         <aside>
           <div>
-            <div></div>
+            <div
+              style={{
+                backgroundImage: `url(${data.profilePicture})`,
+              }}
+            ></div>
           </div>
 
           <div>
@@ -38,10 +42,8 @@ export default function Preview({ data }) {
           <div>
             <p>Languages</p>
             <div>
-              {data.languages.map(language => {
-                return (
-                  <p key={language.id}>{language.language}</p>    
-                );
+              {data.languages.map((language) => {
+                return <p key={language.id}>{language.language}</p>;
               })}
             </div>
           </div>

@@ -9,7 +9,6 @@
 
   display: flex;
   justify-content: center;
-  /* margin: auto 0; */
   align-items: flex-start;
 
   & > div {
@@ -17,7 +16,6 @@
     height: 29.7cm;
     background-color: #fff;
 
-    /* flex-shrink: 0; */
     display: flex;
 
     & > aside {
@@ -38,14 +36,12 @@
           height: 4.5cm;
           background-color: #fff;
 
-          background-image: url(../assets/fyodor.jpg);
           background-position: 50% 50%;
           background-size: cover;
         }
       }
 
       & > div:nth-of-type(2) {
-        /* background-color: lightgrey; */
         padding-left: 1cm;
         padding-top: 2rem;
         margin-bottom: 2rem;
@@ -155,7 +151,6 @@
           padding: 0 1rem 1rem;
           border-left: 3px solid #d7e3fc;
           position: relative;
-          /* background-color: grey; */
 
           & > .decorator-icon {
             position: absolute;
@@ -218,24 +213,20 @@
           display: grid;
           grid-template-columns: 1.5fr 2fr;
           column-gap: 0.5rem;
-          /* background-color: grey; */
+
           border-bottom: 1px dashed grey;
           padding-bottom: 0.3rem;
           margin-bottom: 0.3rem;
 
-          /* & > div { */
-            & > p:first-of-type {
-              font-size: 0.85rem;
-              /* font-weight: 700; */
-              color: #4a4e69;
-              /* line-height: 1.4; */
-            }
+          & > p:first-of-type {
+            font-size: 0.85rem;
+            color: #4a4e69;
+          }
 
-            & > p:last-of-type {
-              font-size: 0.8rem;
-              line-height: 1.4;
-            }
-          /* } */
+          & > p:last-of-type {
+            font-size: 0.8rem;
+            line-height: 1.4;
+          }
         }
       }
     }

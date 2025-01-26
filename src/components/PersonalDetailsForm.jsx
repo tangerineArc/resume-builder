@@ -97,15 +97,20 @@ export default function PersonalDetailsForm({ modifiers, data }) {
           name="about"
           id="about"
           rows={4}
-          onInput={(event) =>
-            modifiers.handleAboutChange(event.target.value)
-          }
+          onInput={(event) => modifiers.handleAboutChange(event.target.value)}
           defaultValue={data.about}
         ></textarea>
       </div>
       <div>
         <label htmlFor="profile-picture">Profile Picture</label>
-        <input type="file" name="profile-picture" id="profile-picture" />
+        <input
+          type="file"
+          name="profile-picture"
+          id="profile-picture"
+          onInput={(event) =>
+            modifiers.handleProfilePictureChange(event.target.files[0])
+          }
+        />
       </div>
     </form>
   );
