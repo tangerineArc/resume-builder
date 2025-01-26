@@ -4,8 +4,7 @@ import AddButton from "../ui/AddButton.jsx";
 
 import EducationEditorForm from "./EducationEditorForm.jsx";
 import EducationItem from "./EducationItem.jsx";
-import EmploymentHistoryEditorForm from "./EmploymentHistoryEditorForm.jsx";
-import EmploymentHistoryItem from "./EmploymentHistoryItem.jsx";
+import EmploymentHistorySection from "./EmploymentHistorySection.jsx";
 import LanguagesEditorSection from "./LanguagesEditorSection.jsx";
 import PersonalDetailsForm from "./PersonalDetailsForm.jsx";
 import SkillItem from "./SkillItem.jsx";
@@ -22,20 +21,7 @@ export default function Editor() {
         <PersonalDetailsForm />
       </section>
 
-      <section>
-        <div>
-          <hr />
-          <h2>Employment History</h2>
-          <hr />
-        </div>
-
-        <EmploymentHistoryItem role={"Web Developer at Acme Inc."} startDate={"Oct 2021"} endDate={"Present"} />
-        <EmploymentHistoryItem role={"Junior Web Developer at Startup Inc."} startDate={"Oct 2021"} endDate={"Present"} />
-
-        <EmploymentHistoryEditorForm />
-
-        <AddButton label={"Add Employment"} />
-      </section>
+      <EmploymentHistorySection />
 
       <section>
         <hr />
