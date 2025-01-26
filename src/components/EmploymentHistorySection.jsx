@@ -94,7 +94,7 @@ export default function EmploymentHistorySection() {
         <EmploymentHistoryEditorForm
           cancelEventHandler={handleCancelEmployment}
           saveEventHandler={handleSaveEmployment}
-          employmentData = {{}}
+          employmentData={{}}
         />
       )}
 
