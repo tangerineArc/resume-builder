@@ -7,7 +7,7 @@ import EducationItem from "./EducationItem.jsx";
 import EmploymentHistorySection from "./EmploymentHistorySection.jsx";
 import LanguagesEditorSection from "./LanguagesEditorSection.jsx";
 import PersonalDetailsForm from "./PersonalDetailsForm.jsx";
-import SkillItem from "./SkillItem.jsx";
+import SkillsSection from "./SkillsSection.jsx";
 
 export default function Editor() {
   return (
@@ -23,24 +23,7 @@ export default function Editor() {
 
       <EmploymentHistorySection />
 
-      <section>
-        <hr />
-        <h2>Skills</h2>
-        <hr />
-        <div>
-          <div>
-            <div>Categories</div>
-            <div>Skills</div>
-          </div>
-
-          <SkillItem category={"Programming Languages"} skills={"HTML, CSS, JavaScript"} />
-          <SkillItem category={"Cloud Services"} skills={"AWS, GCP, MS Azure"} />
-          <SkillItem category={"Web Technologies"} skills={"React, Angular, Vue"} />
-          <SkillItem category={"Databases"} skills={"MySQL, SQLite, PostgreSQL, MongoDB"} />
-        </div>
-
-        <AddButton label={"Add Skill"} />
-      </section>
+      <SkillsSection />
 
       <section>
         <div>

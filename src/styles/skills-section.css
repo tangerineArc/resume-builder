@@ -1,0 +1,41 @@
+#skills-section {
+  margin-bottom: 1rem;
+
+  & > h2 {
+    font-family: "DM Serif Text", serif;
+    margin-left: 1rem;
+    margin-bottom: 0.6rem;
+    margin-top: 0.5rem;
+    color: #002855;
+  }
+
+  & > hr {
+    border-color: #0466c844;
+  }
+
+  & > div {
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+
+    & > div:first-of-type {
+      display: grid;
+      grid-template-columns: 1.5fr 3fr;
+      gap: 2rem;
+
+      & > input {
+        font-size: 0.9rem;
+        color: #0466c8;
+        font-weight: bold;
+
+        background-color: transparent;
+
+        border: none;
+        outline: none;
+        appearance: none;
+      }
+    }
+  }
+}
