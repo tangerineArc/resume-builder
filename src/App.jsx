@@ -1,5 +1,3 @@
-import "./App.css";
-
 import Editor from "./components/Editor.jsx";
 import Preview from "./components/Preview.jsx";
 
