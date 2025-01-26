@@ -54,32 +54,23 @@ export default function Preview({ data }) {
 
           <div>
             <p>Work Experience</p>
-            <div>
-              <Dot className="decorator-icon" color="#d7e3fc" />
-              <div>
-                <p>Web Developer</p>
-                <p>Oct 2021 - Present</p>
-              </div>
-              <p>San Diego, CA ~ Acme Inc.</p>
-              <p>
-                Designed and developed responsive websites and web applications
-                using HTML, CSS, JavaScript, and React.js. Implemented backend
-                functionality using Python and Django.
-              </p>
-            </div>
-            <div>
-              <Dot className="decorator-icon" color="#d7e3fc" />
-              <div>
-                <p>Junior Web Developer</p>
-                <p>Jan 2020 - Oct 2021</p>
-              </div>
-              <p>San Francisco, CA ~ Startup Inc.</p>
-              <p>
-                Developed and maintained web applications using HTML, CSS, and
-                JavaScript. Troubleshooted and resolved bugs to ensure smooth
-                website operation.
-              </p>
-            </div>
+            {data.employments.map((employment) => {
+              return (
+                <div key={employment.id}>
+                  <Dot className="decorator-icon" color="#d7e3fc" />
+                  <div>
+                    <p>{employment.role}</p>
+                    <p>
+                      {employment.startDate} - {employment.endDate}
+                    </p>
+                  </div>
+                  <p>
+                    {employment.city} ~ {employment.employer}
+                  </p>
+                  <p>{employment.description}</p>
+                </div>
+              );
+            })}
           </div>
 
           <div>

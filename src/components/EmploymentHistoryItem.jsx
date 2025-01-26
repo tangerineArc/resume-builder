@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import EmploymentHistoryEditorForm from "./EmploymentHistoryEditorForm.jsx";
 
-export default function EmploymentHistoryItem({ item, deleteEventHandler }) {
+export default function EmploymentHistoryItem({ item, deleteEventHandler, modifiers }) {
   const [isEditingEmployment, setIsEditingEmployment] = useState(false);
 
   const handleEditEmployment = () => {
@@ -20,12 +20,22 @@ export default function EmploymentHistoryItem({ item, deleteEventHandler }) {
     event.preventDefault();
 
     const data = Object.fromEntries(new FormData(event.target));
-    item.role = data["job-role"];
-    item.employer = data.employer;
-    item.startDate = data["start-date"];
-    item.endDate = data["end-date"];
-    item.city = data["city"];
-    item.description = data.description;
+
+    modifiers.setEmployments(prevEmployments => {
+      const newEmployments = structuredClone(prevEmployments);
+      for (let employment of newEmployments) {
+        if (item.id === employment.id) {
+          employment.role = data["job-role"];
+          employment.employer = data.employer;
+          employment.startDate = data["start-date"];
+          employment.endDate = data["end-date"];
+          employment.city = data["city"];
+          employment.description = data.description;
+          break;
+        }
+      }
+      return newEmployments;
+    });
 
     handleCancelEdit();
   };

@@ -7,32 +7,8 @@ import AddButton from "../ui/AddButton.jsx";
 import EmploymentHistoryItem from "./EmploymentHistoryItem.jsx";
 import EmploymentHistoryEditorForm from "./EmploymentHistoryEditorForm.jsx";
 
-const defaultEmployments = [
-  {
-    id: crypto.randomUUID(),
-    role: "Web Developer",
-    employer: "Acme Inc.",
-    startDate: "Oct 2021",
-    endDate: "Present",
-    city: "San Diego, CA",
-    description:
-      "Designed and developed responsive websites and web applications using HTML, CSS, JavaScript, and React.js. Implemented backend functionality using Python and Django. Collaborated with designers and project managers to ensure on-time delivery of projects.",
-  },
-  {
-    id: crypto.randomUUID(),
-    role: "Junior Web Developer",
-    employer: "Startup Inc.",
-    startDate: "Nov 2024",
-    endDate: "Dec 2025",
-    city: "San Francisco, CA",
-    description:
-      "Developed and maintained web applications using HTML, CSS, and JavaScript. Troubleshooted and resolved bugs to ensure smooth website operation.",
-  },
-];
-
-export default function EmploymentHistorySection() {
+export default function EmploymentHistorySection({ modifiers, data }) {
   const [isAddingEmployment, setIsAddingEmployment] = useState(false);
-  const [employments, setEmployments] = useState(defaultEmployments);
 
   const handleAddEmployment = () => {
     setIsAddingEmployment(true);
@@ -56,7 +32,7 @@ export default function EmploymentHistorySection() {
       description: data.description,
     };
 
-    setEmployments((prevEmployments) => {
+    modifiers.setEmployments((prevEmployments) => {
       const newEmployments = structuredClone(prevEmployments);
       newEmployments.push(employment);
       return newEmployments;
@@ -66,7 +42,7 @@ export default function EmploymentHistorySection() {
   };
 
   const handleDeleteEmployment = (targetId) => {
-    setEmployments((prevEmployments) => {
+    modifiers.setEmployments((prevEmployments) => {
       const newEmployments = prevEmployments.filter(
         (employment) => employment.id !== targetId
       );
@@ -82,11 +58,12 @@ export default function EmploymentHistorySection() {
         <hr />
       </div>
 
-      {employments.map((employment) => {
+      {data.employments.map((employment) => {
         return <EmploymentHistoryItem
           key={employment.id}
           item={employment}
           deleteEventHandler={() => handleDeleteEmployment(employment.id)}
+          modifiers={modifiers}
         />
       })}
 

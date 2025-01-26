@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { defaultEmployments } from "./data/defaults.js";
+
 import Editor from "./components/Editor.jsx";
 import Preview from "./components/Preview.jsx";
 
@@ -15,6 +17,8 @@ export default function App() {
   const [about, setAbout] = useState(
     "Highly motivated and results-oriented Web Developer with 4 years of experience in building user-friendly and responsive web applications. Passionate about innovative and performant web experiences."
   );
+
+  const [employments, setEmployments] = useState(defaultEmployments);
 
   const modifiers = {
     handleFirstNameChange: (name) => {
@@ -56,11 +60,12 @@ export default function App() {
     portfolio,
     linkedin,
     about,
+    employments,
   };
 
   return (
     <>
-      <Editor modifiers={modifiers} data={data} />
+      <Editor modifiers={{ ...modifiers, setEmployments }} data={data} />
       <Preview data={data} />
     </>
   );

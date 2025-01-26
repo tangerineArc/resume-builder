@@ -12,7 +12,7 @@ export default function Editor({ modifiers, data }) {
       <h1>Resumé Builder</h1>
 
       <PersonalDetailsSection modifiers={modifiers} data={data} />
-      <EmploymentHistorySection />
+      <EmploymentHistorySection modifiers={modifiers} data={data} />
       <SkillsSection />
       <EducationSection />
       <LanguagesEditorSection />
