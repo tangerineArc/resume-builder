@@ -50,6 +50,7 @@
     padding: 0 !important;
 
     & > div {
+      transform: scale(1) !important;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
     }
